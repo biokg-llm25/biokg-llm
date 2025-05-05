@@ -14,7 +14,7 @@ We introduce a two-fold contribution:
 
 **[Download the KG Dataset (CSV)](biokg_llm.csv)** to explore clinically relevant information beyond molecular data.
 
-
+<img src="figures/Proposed_Pipeline.png" alt="Pipeline Overview" width="1000"/>
 
 ## Overview
 
@@ -43,9 +43,6 @@ We evaluate the KG through manual inspection and compare its coverage with exist
 ## Proposed Pipeline
 
 We present an end-to-end pipeline for constructing a biomedical knowledge graph from unstructured drug leaflet data. The process begins with data collection, where drug leaflets are scraped from online pharmacies using a web scraper built using Python and converted into machine-readable text. This raw data is then processed using a prompt-based approach with an LLM for information extraction, focusing on key drug-related entities and their interrelationships. The extracted entities undergo further refinement through NER and relation mapping, ultimately being transformed into nodes and labeled edges. These are subsequently post-processed and organized into a CSV format, which serves as the foundation of the knowledge graph. The figure below provides a visual overview of the entire pipeline, illustrating each processing stage from data collection to knowledge graph construction.
-
-<img src="figures/Proposed_Pipeline.png" alt="Pipeline Overview" width="1000"/>
-
 
 ## Installation
 

@@ -32,7 +32,21 @@ We present an end-to-end pipeline for constructing a biomedical knowledge graph 
 
 <img src="figures/Proposed_Pipeline.png" alt="Pipeline Overview" width="1000"/>
 
-## Installation
+## Features
+
+- *End-to-End Biomedical KG Pipeline:*  A modular and hackable pipeline that extracts structured knowledge from unstructured text using web scraping, LLMs, NER, and relation mapping. Both the LLM and scraper components can be easily replaced or customized.
+
+- *Drug Leaflet-Centric Knowledge Graph:*  Constructed from 13,000+ drug leaflets sourced from the HPRA, capturing real-world, patient-facing clinical data often overlooked in existing biomedical resources.
+
+- *LLM-Based Information Extraction:*  Utilizes LLaMA 3 70B Instruct for prompt-based extraction of subject–predicate–object triples directly from full-text PDFs, avoiding the need for chunking and preserving context.
+
+- *Ready-to-Use Dataset:*  The resulting knowledge graph can be downloaded [here](https://github.com/biokg-llm25/biokg-llm/blob/main/data/biomedical_kg.csv) in a ready-to-use CSV format.
+
+- *Broader Clinical Coverage:*  Captures practical features often missing in other biomedical KGs and databases, including storage information, physical appearance (shape, color), and inactive ingredients.
+
+- *Generalizable & Open Source:*  The pipeline is reusable and adaptable across domains and document types, and the full codebase is open source.
+
+
 
 
 

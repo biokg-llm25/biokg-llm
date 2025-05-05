@@ -26,12 +26,6 @@ The proposed method is modular, reproducible, and easy to adapt. Both the LLM an
 
 We evaluate the KG through manual inspection and compare its coverage with existing biomedical KGs and databases, highlighting complementary aspects such as storage instructions, dosage guidelines, and ingredient details that are often absent in these resources. We expect this dataset to support future applications in areas such as patient safety and drug recommendation, while the generation method can be easily adopted for other types of unstructured documents.
 
-## Proposed Pipeline
-
-We present an end-to-end pipeline for constructing a biomedical knowledge graph from unstructured drug leaflet data. The process begins with data collection, where drug leaflets are scraped from online pharmacies using a web scraper built using Python and converted into machine-readable text. This raw data is then processed using a prompt-based approach with an LLM for information extraction, focusing on key drug-related entities and their interrelationships. The extracted entities undergo further refinement through NER and relation mapping, ultimately being transformed into nodes and labeled edges. These are subsequently post-processed and organized into a CSV format, which serves as the foundation of the knowledge graph. The figure below provides a visual overview of the entire pipeline, illustrating each processing stage from data collection to knowledge graph construction.
-
-<img src="figures/Proposed_Pipeline.png" alt="Pipeline Overview" width="1000"/>
-
 ## Features
 
 - *End-to-End Biomedical KG Pipeline:*  A modular and hackable pipeline that extracts structured knowledge from unstructured text using web scraping, LLMs, NER, and relation mapping. Both the LLM and scraper components can be easily replaced or customized.
@@ -46,7 +40,74 @@ We present an end-to-end pipeline for constructing a biomedical knowledge graph 
 
 - *Generalizable & Open Source:*  The pipeline is reusable and adaptable across domains and document types, and the full codebase is open source.
 
+## Proposed Pipeline
+
+We present an end-to-end pipeline for constructing a biomedical knowledge graph from unstructured drug leaflet data. The process begins with data collection, where drug leaflets are scraped from online pharmacies using a web scraper built using Python and converted into machine-readable text. This raw data is then processed using a prompt-based approach with an LLM for information extraction, focusing on key drug-related entities and their interrelationships. The extracted entities undergo further refinement through NER and relation mapping, ultimately being transformed into nodes and labeled edges. These are subsequently post-processed and organized into a CSV format, which serves as the foundation of the knowledge graph. The figure below provides a visual overview of the entire pipeline, illustrating each processing stage from data collection to knowledge graph construction.
+
+<img src="figures/Proposed_Pipeline.png" alt="Pipeline Overview" width="1000"/>
 
 
+## Installation
+
+Follow these steps to set up the project locally:
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/biokg-llm25/biokg-llm.git
+cd biokg-llm
+```
+
+### 2. Create and activate virtual environment
+```bash
+python3 -m venv env
+source env/bin/activate  # On Windows: env\Scripts\activate
+```
+
+### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+The pipeline is divided into multiple stages for modular processing:
+
+### 1. Data Scraping
+- **Step 1: Extract Drug Page URLs**
+```bash
+python scrape_html_sources.py
+```
+Scrapes the HPRA website using BeautifulSoup and extracts source code with links to drug leaflet pages. You may replace with a scraper of your choice.
+- **Step 2: Download PDFs from Extracted URLs**
+```bash
+python download_pdfs.py
+```
+Downloads the actual drug leaflet PDFs based on the extracted page source code.
+
+### 2. Information Extraction Using LLM
+- **Step 3: Extract Structured Data from PDFs**
+```bash
+python extract_information_llm.py
+```
+Uses a locally hosted LLM (e.g., LLaMA 3 70B Instruct) to extract drug-related information using prompts. Outputs are saved as .txt files in a Q&A format. You may replace the LLM with a model of your choice.
 
 
+### 3. Knowledge Graph Construction
+- **Step 4: Build Initial KG in CSV Format**
+```bash
+python build_kg_csv.py
+```
+Parses the extracted .txt file, performs entity recognition and relation mapping, and constructs a raw KG in CSV format.
+- **Step 5: Post-Processing & Final KG Generation**
+```bash
+python postprocess_kg.py
+```
+Performs post-processing like entity shortening using a locally hosted LLM (LLaMA 3 70B Instruct). You may replace the LLM with a model of your choice.
+
+### 4. Visualization and KG Statistics
+```bash
+jupyter notebook graph_stats.ipynb
+```
+Explore key graph statistics of the dataset(as a kG) like:
+- Entity & relation type distributions
+- Node & edge counts
+- Degree distributions and graph connectivity

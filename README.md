@@ -14,7 +14,10 @@ We introduce a two-fold contribution:
 
 **[Download the KG Dataset (CSV)](biokg_llm.csv)** to explore clinically relevant information beyond molecular data.
 
-<img src="figures/Proposed_Pipeline.png" alt="Pipeline Overview" width="1000"/>
+<p align="center">
+  <img src="figures/Proposed_Pipeline.png" alt="Pipeline Overview" width="100%">
+</p>
+
 
 ## Overview
 

@@ -104,9 +104,14 @@ python build_kg_csv.py --input hpra_kg.txt --terms final_medical_terms_hpra.txt 
 Parses the extracted .txt file and and the curated medical terms list, performs entity recognition and relation mapping, and constructs a raw KG in CSV format.
 - **Step 6: Post-Processing & Final KG Generation**
 ```bash
-python postprocess_kg.py
+python postprocess_kg.py \
+  --input ./hpra_complete_network.csv \
+  --final_output ./hpra_final_network.csv \
+  --log_dir ./logs \
+  --llm_url <your_llm_url> \
+  --llm_model <your_model_name>
 ```
-Performs post-processing like entity shortening using a locally hosted LLM (LLaMA 3 70B Instruct). You may replace the LLM with a model of your choice.
+Performs post-processing and cleaning like entity shortening using a locally hosted LLM (LLaMA 3 70B Instruct). Works with local or cloud-hosted models. Replace the llm_url and llm_model as per your choice.
 
 ### 4. Visualization and KG Statistics
 ```bash

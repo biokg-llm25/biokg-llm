@@ -6,18 +6,16 @@ Script to extract and normalize medical terms from a text file using SciSpaCy an
 - Removes English stopwords
 - Saves the final term list to an output file
 """
-
+# ------------------ Import necessary libraries ------------------
 import spacy
 import nltk
 import argparse
 
-# Download required NLTK resources
+# ------------------ Download required resources ------------------
 nltk.download("stopwords")
-
-# Load SciSpaCy Biomedical Model for biomedical entity recognition
 nlp_bc5cdr = spacy.load("en_ner_bc5cdr_md")  
 
-
+# ------------------ Utility function(s) ------------------
 def extract_medical_terms(txt_file_path, output_path):
     """
     Extracts, filters, and saves medical terms from a structured text file.
@@ -34,13 +32,8 @@ def extract_medical_terms(txt_file_path, output_path):
         "List the contraindications found in the leaflet as a comma-separated list of names only.",
         "List the warnings and precautions found in the leaflet as a comma-separated list of names only.",
     }
-
-    # Define valid medical entity types for filtering
     valid_medical_types = {"CHEMICAL", "DISEASE", "DRUG"}
-
-    # Read extracted medical terms from the TXT file
     entities = []
-
     with open(txt_file_path, "r", encoding="utf-8") as file:
         lines = file.readlines()
     for i, line in enumerate(lines):
@@ -54,16 +47,12 @@ def extract_medical_terms(txt_file_path, output_path):
                     entities.extend([v.strip().lower() for v in answer.split(",")])
                 else:
                     entities.append(answer.lower())
-
-    # Normalize terms using SciSpaCy (filtering by medical entity type)
     filtered_medical_terms = set()
     for term in entities:
         doc = nlp_bc5cdr(term)
         for ent in doc.ents:
-            if ent.label_ in valid_medical_types:  # Only keep valid medical categories
+            if ent.label_ in valid_medical_types:  
                 filtered_medical_terms.add(ent.text)
-
-    # Remove stopwords using NLTK
     try:
         nltk_stopwords = set(nltk.corpus.stopwords.words("english"))
         filtered_medical_terms = {
@@ -71,15 +60,12 @@ def extract_medical_terms(txt_file_path, output_path):
         }
     except LookupError:
         print("Warning: NLTK stopwords not found, skipping stopword filtering.")
-
-    # Save final cleaned medical terms
     with open(output_path, "w", encoding="utf-8") as f:
         for term in sorted(filtered_medical_terms):
             f.write(term + "\n")
+    print(f"Final medical terms list saved with {len(filtered_medical_terms)} terms.")
 
-    print(f"Final medical terms list saved with {len(filtered_medical_terms)} terms!")
-
-
+# ------------------ Main execution ------------------
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Extract and normalize medical terms from HPRA text file.")
     parser.add_argument("--input", required=True, help="Path to the input .txt file")

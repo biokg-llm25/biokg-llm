@@ -86,9 +86,13 @@ Downloads the actual drug leaflet PDFs based on the extracted page source code.
 ### 2. Information Extraction Using LLM
 - **Step 3: Extract Structured Data from PDFs**
 ```bash
-python extract_information_llm.py
+python extract_information.py \
+  --pdf_dir ./hpra_data \
+  --output ./hpra_kg.txt \
+  --llm_url <YOUR_LLM_URL> \
+  --llm_model <YOUR_MODEL_NAME>
 ```
-Uses a locally hosted LLM (e.g., LLaMA 3 70B Instruct) to extract drug-related information using prompts. Outputs are saved as .txt files in a Q&A format. You may replace the LLM with a model of your choice.
+Uses a locally hosted LLM (e.g., LLaMA 3 70B Instruct) to extract drug-related information using prompts. Outputs are saved as Question(Prompt)-Answer(LLM Response) pairs in a single .txt file. Replace the LLM arguments with your preferred model and endpoint.
 
 
 ### 3. Knowledge Graph Construction
@@ -111,7 +115,7 @@ python postprocess_kg.py \
   --llm_url <your_llm_url> \
   --llm_model <your_model_name>
 ```
-Performs post-processing and cleaning like entity shortening using a locally hosted LLM (LLaMA 3 70B Instruct). Works with local or cloud-hosted models. Replace the llm_url and llm_model as per your choice.
+Performs post-processing and cleaning like entity shortening using a locally hosted LLM (LLaMA 3 70B Instruct). Replace the LLM arguments with your preferred model and endpoint.
 
 ### 4. Visualization and KG Statistics
 ```bash

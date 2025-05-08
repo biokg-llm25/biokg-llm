@@ -72,14 +72,14 @@ pip install -r requirements.txt
 The pipeline is divided into multiple stages for modular processing:
 
 ### 1. Data Scraping
-- **Step 1: Extract Drug Page URLs**
+- **Step 1: Extract Source Code**
 ```bash
-python scrape_html_sources.py
+python scripts/scrape_html_sources.py
 ```
-Scrapes the HPRA website using BeautifulSoup and extracts source code with links to drug leaflet pages. You may replace with a scraper of your choice.
+Scrapes the [HPRA website](https://www.hpra.ie) using BeautifulSoup and extracts source code with links to drug leaflet pages. You may use a scraper of your choice.
 - **Step 2: Download PDFs from Extracted URLs**
 ```bash
-python download_pdfs.py
+python scripts/download_pdfs.py --rtf_path ./sourcecode_hpra.rtf --output_folder ./hpra_data
 ```
 Downloads the actual drug leaflet PDFs based on the extracted page source code.
 

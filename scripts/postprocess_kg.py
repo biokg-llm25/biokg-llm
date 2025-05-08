@@ -34,7 +34,7 @@ Models like LLaMA 3 via Ollama can be used or connect to
 other local or cloud-based models by providing the appropriate URL and model name.
 
 """
-# ------------------ Install necessary libraries ------------------
+# ------------------ Import necessary libraries ------------------
 import pandas as pd
 import csv
 import argparse

@@ -89,8 +89,8 @@ Downloads the actual drug leaflet PDFs based on the extracted page source code.
 python extract_information.py \
   --pdf_dir ./hpra_data \
   --output ./hpra_kg.txt \
-  --llm_url <YOUR_LLM_URL> \
-  --llm_model <YOUR_MODEL_NAME>
+  --llm_url <your_llm_url> \
+  --llm_model <your_model_name>
 ```
 Uses a locally hosted LLM (e.g., LLaMA 3 70B Instruct) to extract drug-related information using prompts. Outputs are saved as Question(Prompt)-Answer(LLM Response) pairs in a single .txt file. Replace the LLM arguments with your preferred model and endpoint.
 

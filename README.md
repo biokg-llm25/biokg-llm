@@ -92,12 +92,17 @@ Uses a locally hosted LLM (e.g., LLaMA 3 70B Instruct) to extract drug-related i
 
 
 ### 3. Knowledge Graph Construction
-- **Step 4: Build Initial KG in CSV Format**
+- **Step 4: Extract Normalized Medical Terms (Preprocessing)**
 ```bash
-python build_kg_csv.py
+python extract_medical_terms.py --input ./hpra_kg.txt --output ./final_medical_terms_hpra.txt
 ```
-Parses the extracted .txt file, performs entity recognition and relation mapping, and constructs a raw KG in CSV format.
-- **Step 5: Post-Processing & Final KG Generation**
+Generates a list of medical terms from the Q&A-format .txt file using named entity recognition (NER). These terms are used for fuzzy matching and normalization in the subsequent KG construction step.
+- **Step 5: Build Initial KG in CSV Format**
+```bash
+python build_kg_csv.py --input hpra_kg.txt --terms final_medical_terms_hpra.txt --output hpra_complete_network.csv
+```
+Parses the extracted .txt file and and the curated medical terms list, performs entity recognition and relation mapping, and constructs a raw KG in CSV format.
+- **Step 6: Post-Processing & Final KG Generation**
 ```bash
 python postprocess_kg.py
 ```

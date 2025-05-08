@@ -7,32 +7,6 @@ It runs in two main phases:
    into separate rows (e.g., converts "nausea, headache" into two rows) and also removes any extra stop-words.
 2. Uses a locally or remotely hosted LLM to shorten long biomedical terms
    (e.g., "high blood pressure causing persistent headache" → "hypertensive headache").
-
----
-Run from the command line:
-
-    python postprocess_kg.py \
-        --input <path_to_input_csv> \
-        --final_output <path_to_final_output_csv> \
-        --log_dir <path_to_log_directory> \
-        --llm_url <llm_api_url> \
-        --llm_model <model_name>
-
-OPTIONAL:
-    --mid_output: Path to save the intermediate cleaned CSV (comma-split version).
-                  If not provided, it will be auto-generated from the input filename.
-
-ARGUMENTS:
-    --input         Path to the raw KG CSV file (from Step 5)
-    --final_output  Output path to save the final cleaned KG
-    --log_dir       Directory to store logs; will be created if not present
-    --llm_url       URL to your LLM endpoint (e.g., a local server or cloud API)
-    --llm_model     Name of the LLM model to use for entity shortening
-
-NOTE:
-Models like LLaMA 3 via Ollama can be used or connect to
-other local or cloud-based models by providing the appropriate URL and model name.
-
 """
 # ------------------ Import necessary libraries ------------------
 import pandas as pd

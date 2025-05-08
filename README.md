@@ -14,10 +14,11 @@ We introduce a two-fold contribution:
 
 **[Download the KG Dataset (CSV)](biokg_llm.csv)** to explore clinically relevant information beyond molecular data.
 
-#### Figure 1: Overview of Proposed Pipeline
 <p align="center">
   <img src="figures/Proposed_Pipeline.png" alt="Pipeline Overview" width="100%">
 </p>
+<em>Figure 1: Proposed Pipeline</em>
+
 
 ## Overview
 
@@ -45,11 +46,26 @@ We evaluate the KG through manual inspection and compare its coverage with exist
 
 ## Proposed Pipeline
 
-We present an end-to-end pipeline for constructing a biomedical knowledge graph from unstructured drug leaflet data. The process begins with data collection, where drug leaflets are scraped from online pharmacies using a web scraper built using Python and converted into machine-readable text. This raw data is then processed using a prompt-based approach with an LLM for information extraction, focusing on key drug-related entities and their interrelationships. The extracted entities undergo further refinement through NER and relation mapping, ultimately being transformed into nodes and labeled edges. These are subsequently post-processed and organized into a CSV format, which serves as the foundation of the knowledge graph. [Figure 1](#figure-1-overview-of-proposed-pipeline) above provides a visual overview of the entire pipeline, illustrating each processing stage from data collection to knowledge graph construction.
+We present an end-to-end pipeline for constructing a biomedical knowledge graph from unstructured drug leaflet data. The process begins with data collection, where drug leaflets are scraped from online pharmacies using a web scraper built using Python and converted into machine-readable text. This raw data is then processed using a prompt-based approach with an LLM for information extraction, focusing on key drug-related entities and their interrelationships. The extracted entities undergo further refinement through NER and relation mapping, ultimately being transformed into nodes and labeled edges. These are subsequently post-processed and organized into a CSV format, which serves as the foundation of the knowledge graph. [Figure 1](#figure-1-proposed-pipeline) above provides a visual overview of the entire pipeline, illustrating each processing stage from data collection to knowledge graph construction.
 
 ## Dataset Description
 
-As a demonstration of our general pipeline for the construction of biomedical KGs, we implemented and evaluated a case study focused on drug leaflets. The resulting KG contains a total of 488,154 subject–predicate–object triples, covering 23,313 unique entities and 10 different relation types. It comprises 4,786 unique Drug entities, connected to a wide range of medically relevant object types. Specifically, the graph includes 8,043 SideEffect nodes, 7,213 Warning nodes, 4,016 Contraindication nodes, 1,950 ActiveIngredient nodes, and 1,781 InactiveIngredient nodes. Additional descriptive attributes are captured through 926 Colour, 1,143 Shape, 660 StorageInfo, and 177 DosageInfo nodes. The graph forms a single connected component, with all 23,313 nodes interconnected via 431,909 directed, labeled edges. The average node degree is 41.87, indicating a densely connected structure. The following figure shows the distribution of various entity types and relation types in the dataset.
+As a demonstration of our general pipeline for the construction of biomedical KGs, we implemented and evaluated a case study focused on drug leaflets. The resulting KG contains a total of 488,154 subject–predicate–object triples, covering 23,313 unique entities and 10 different relation types. It comprises 4,786 unique Drug entities, connected to a wide range of medically relevant object types. Specifically, the graph includes 8,043 SideEffect nodes, 7,213 Warning nodes, 4,016 Contraindication nodes, 1,950 ActiveIngredient nodes, and 1,781 InactiveIngredient nodes. Additional descriptive attributes are captured through 926 Colour, 1,143 Shape, 660 StorageInfo, and 177 DosageInfo nodes. The graph forms a single connected component, with all 23,313 nodes interconnected via 431,909 directed, labeled edges. The average node degree is 41.87, indicating a densely connected structure. The following figures 2 and 3 show the distribution of various entity types and relation types in the dataset.
+
+<table width="100%">
+  <tr>
+    <td align="center" width="50%">
+      <img src="figures/Entity_Distribution.png" alt="Figure 1" width="100%"/><br>
+      <em>Figure 2: Entity Type Distribution</em>
+    </td>
+    <td align="center" width="50%">
+      <img src="figures/Edge_Distribution.png" alt="Figure 2" width="100%"/><br>
+      <em>Figure 3: Relation Type Distribution</em>
+    </td>
+  </tr>
+</table>
+
+
 
 ## Installation
 

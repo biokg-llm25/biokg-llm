@@ -106,7 +106,7 @@ Downloads the actual drug leaflet PDFs based on the extracted page source code.
 ### 2. Information Extraction Using LLM
 - **Step 3: Extract Structured Data from PDFs**
 ```bash
-python extract_information.py \
+python scripts/extract_information.py \
   --pdf_dir ./hpra_data \
   --output ./hpra_kg.txt \
   --llm_url <your_llm_url> \
@@ -118,17 +118,17 @@ Uses a locally hosted LLM (e.g., LLaMA 3 70B Instruct) to extract drug-related i
 ### 3. Knowledge Graph Construction
 - **Step 4: Extract Normalized Medical Terms (Preprocessing)**
 ```bash
-python extract_medical_terms.py --input ./hpra_kg.txt --output ./final_medical_terms_hpra.txt
+python scripts/extract_medical_terms.py --input ./hpra_kg.txt --output ./final_medical_terms_hpra.txt
 ```
 Generates a list of medical terms from the Q&A-format .txt file using named entity recognition (NER). These terms are used for fuzzy matching and normalization in the subsequent KG construction step.
 - **Step 5: Build Initial KG in CSV Format**
 ```bash
-python build_kg_csv.py --input hpra_kg.txt --terms final_medical_terms_hpra.txt --output hpra_complete_network.csv
+python scripts/build_kg_csv.py --input hpra_kg.txt --terms final_medical_terms_hpra.txt --output hpra_complete_network.csv
 ```
 Parses the extracted .txt file and and the curated medical terms list, performs entity recognition and relation mapping, and constructs a raw KG in CSV format.
 - **Step 6: Post-Processing & Final KG Generation**
 ```bash
-python postprocess_kg.py \
+python scripts/postprocess_kg.py \
   --input ./hpra_complete_network.csv \
   --final_output ./hpra_final_network.csv \
   --log_dir ./logs \

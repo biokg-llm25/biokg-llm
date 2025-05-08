@@ -10,7 +10,6 @@ Script to extract and normalize medical terms from a text file using SciSpaCy an
 import spacy
 import nltk
 import argparse
-import os
 
 # Download required NLTK resources
 nltk.download("stopwords")

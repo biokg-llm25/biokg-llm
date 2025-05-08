@@ -7,7 +7,7 @@ Main Phases:
 2. LLM-powered extraction of structured drug attributes
 3. Optional refinement using follow-up LLM queries (e.g., standardizing dosage or shape/color)
 """
-
+# ------------------ Import necessary libraries ------------------
 import os
 import requests
 import logging

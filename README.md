@@ -1,9 +1,10 @@
 # Construction of Biomedical Knowledge Graphs Using Large Language Models
 <div align="left">
-  <a href="biokg_llm.csv" download>
+  <a href="https://dataverse.harvard.edu/api/access/datafile/11206291?format=original" download>
     <img src="https://img.shields.io/badge/DOWNLOAD%20DATASET-CSV-blue?style=for-the-badge&logo=csv&logoColor=white" alt="Download Dataset CSV">
   </a>
 </div>
+
 
 ## TL;DR
 
@@ -38,7 +39,7 @@ We evaluate the KG through manual inspection and compare its coverage with exist
 
 - *LLM-Based Information Extraction:*  Utilizes LLaMA 3 70B Instruct for prompt-based extraction of subject–predicate–object triples directly from full-text PDFs, avoiding the need for chunking and preserving context.
 
-- *Ready-to-Use Dataset:*  The resulting knowledge graph can be downloaded [here](https://github.com/biokg-llm25/biokg-llm/blob/main/data/biomedical_kg.csv) in a ready-to-use CSV format.
+- *Ready-to-Use Dataset:*  The resulting knowledge graph can be downloaded from [Harvard Dataverse](https://doi.org/10.7910/DVN/LT9OL0) in a ready-to-use CSV format.
 
 - *Broader Clinical Coverage:*  Captures practical features often missing in other biomedical KGs and databases, including storage information, physical appearance (shape, color), and inactive ingredients.
 

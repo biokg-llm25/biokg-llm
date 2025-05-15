@@ -1,4 +1,4 @@
-# Construction of Biomedical Knowledge Graphs Using Large Language Models
+# 🐟 MEDAKA: Construction of Biomedical Knowledge Graphs Using Large Language Models
 <div align="left">
   <a href="https://huggingface.co/datasets/biokg-llm25/Dataset_biokgllm/resolve/main/kg.csv?download=true" download>
     <img src="https://img.shields.io/badge/DOWNLOAD%20DATASET-CSV-blue?style=for-the-badge&logo=csv&logoColor=white" alt="Download Dataset CSV">

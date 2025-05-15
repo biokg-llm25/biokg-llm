@@ -101,7 +101,7 @@ python scripts/scrape_html_sources.py
 Scrapes the [HPRA website](https://www.hpra.ie) using BeautifulSoup and extracts source code with links to drug leaflet pages. You may use a scraper of your choice.
 - **Step 2: Download PDFs from Extracted URLs**
 ```bash
-python scripts/download_pdfs.py --rtf_path ./sourcecode_hpra.rtf --output_folder ./hpra_data
+python scripts/download_pdfs.py --rtf_path ./sourcecode.rtf --output_folder ./data
 ```
 Downloads the actual drug leaflet PDFs based on the extracted page source code.
 
@@ -109,8 +109,8 @@ Downloads the actual drug leaflet PDFs based on the extracted page source code.
 - **Step 3: Extract Structured Data from PDFs**
 ```bash
 python scripts/extract_information.py \
-  --pdf_dir ./hpra_data \
-  --output ./hpra_kg.txt \
+  --pdf_dir ./data \
+  --output ./medaka.txt \
   --llm_url <your_llm_url> \
   --llm_model <your_model_name>
 ```
@@ -120,24 +120,29 @@ Uses a locally hosted LLM (e.g., LLaMA 3 70B Instruct) to extract drug-related i
 ### 3. Knowledge Graph Construction
 - **Step 4: Extract Normalized Medical Terms (Preprocessing)**
 ```bash
-python scripts/extract_medical_terms.py --input ./hpra_kg.txt --output ./final_medical_terms_hpra.txt
+python scripts/extract_medical_terms.py --input ./medaka.txt --output ./final_medical_terms.txt
 ```
 Generates a list of medical terms from the Q&A-format .txt file using named entity recognition (NER). These terms are used for fuzzy matching and normalization in the subsequent KG construction step.
 - **Step 5: Build Initial KG in CSV Format**
 ```bash
-python scripts/build_kg_csv.py --input hpra_kg.txt --terms final_medical_terms_hpra.txt --output hpra_complete_network.csv
+python scripts/build_kg_csv.py --input medaka.txt --terms final_medical_terms.txt --output medaka_complete_network.csv
 ```
 Parses the extracted .txt file and and the curated medical terms list, performs entity recognition and relation mapping, and constructs a raw KG in CSV format.
-- **Step 6: Post-Processing & Final KG Generation**
+- **Step 6: Post-Processing**
 ```bash
 python scripts/postprocess_kg.py \
-  --input ./hpra_complete_network.csv \
-  --final_output ./hpra_final_network.csv \
+  --input ./medaka_complete_network.csv \
+  --final_output ./medaka_processed_network.csv \
   --log_dir ./logs \
   --llm_url <your_llm_url> \
   --llm_model <your_model_name>
 ```
 Performs post-processing and cleaning like entity shortening using a locally hosted LLM (LLaMA 3 70B Instruct). Replace the LLM arguments with your preferred model and endpoint.
+- **Step 7: Cleaning & Final KG Generation**
+```bash
+python clean_kg.py --input data/medaka_processed_network.csv --output data/medaka.csv
+```
+Performs a final cleaning to remove null and noisy values, and duplicates. Generates the final dataset as a CSV file.
 
 ### 4. Visualization and KG Statistics
 ```bash

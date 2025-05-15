@@ -67,7 +67,7 @@ def extract_medical_terms(txt_file_path, output_path):
 
 # ------------------ Main execution ------------------
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Extract and normalize medical terms from HPRA text file.")
+    parser = argparse.ArgumentParser(description="Extract and normalize medical terms from the text file.")
     parser.add_argument("--input", required=True, help="Path to the input .txt file")
     parser.add_argument("--output", required=True, help="Path to save the final .txt file with extracted terms")
     args = parser.parse_args()

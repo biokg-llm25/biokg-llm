@@ -6,8 +6,8 @@ import argparse
 
 def clean_kg(input_path, output_path):
     """
-    Cleans the dataset by removing nulls, placeholder entries,
-    noisy patterns, short meaningless objects, and duplicates.
+    Cleans the post-processed dataset by removing nulls, placeholder entries,
+    noisy patterns, short meaningless objects, and duplicates. The output generated serves as the final dataset ready to be used.
     """
     if not os.path.exists(input_path):
         raise FileNotFoundError(f"Input file not found: {input_path}")

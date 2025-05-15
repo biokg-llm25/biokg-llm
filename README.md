@@ -75,8 +75,8 @@ Follow these steps to set up the project locally:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/biokg-llm25/biokg-llm.git
-cd biokg-llm
+git clone https://github.com/medaka25/medaka.git
+cd medaka
 ```
 
 ### 2. Create and activate virtual environment

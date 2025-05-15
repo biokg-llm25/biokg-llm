@@ -17,7 +17,7 @@ We introduce a two-fold contribution:
 **[Download the KG Dataset (CSV) from Hugging Face Hub](https://huggingface.co/datasets/medaka25/MEDAKA)** to explore clinically relevant information beyond molecular data.
 
 <p align="center">
-  <img src="figures/Proposed_Pipeline.png" alt="Pipeline Overview" width="100%">
+  <img src="figures/MEDAKA_Proposed_Pipeline.png" alt="Pipeline Overview" width="100%">
 </p>
 <em>Figure 1: Proposed Pipeline</em>
 

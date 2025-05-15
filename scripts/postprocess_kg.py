@@ -17,9 +17,9 @@ import time
 import os
 
 # ------------------ Argparse for Reproducibility ------------------
-parser = argparse.ArgumentParser(description="Post-process HPRA KG: clean comma-separated values and shorten long entities using LLM.")
-parser.add_argument("--input", required=True, help="Path to input KG CSV (e.g., hpra_complete_network.csv)")
-parser.add_argument("--final_output", required=True, help="Path to final cleaned CSV (e.g., hpra_final_network.csv)")
+parser = argparse.ArgumentParser(description="Post-process MEDAKA: clean comma-separated values and shorten long entities using LLM.")
+parser.add_argument("--input", required=True, help="Path to input KG CSV")
+parser.add_argument("--final_output", required=True, help="Path to final cleaned CSV")
 parser.add_argument("--log_dir", required=True, help="Directory to store log files")
 parser.add_argument("--llm_url", required=True, help="URL of the LLM endpoint")
 parser.add_argument("--llm_model", required=True, help="Name of the model to be used")

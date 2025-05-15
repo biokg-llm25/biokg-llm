@@ -7,9 +7,6 @@ to build a structured medical knowledge graph in CSV format.
 - Applies fuzzy matching to correct spelling variations
 - Extracts min/max dosages, standardizes units
 - Outputs relationships as (Subject, Predicate, Object) triples in a CSV file
-
-Usage:
-    python build_kg_csv.py --input hpra_kg.txt --terms final_medical_terms_hpra.txt --output hpra_complete_network.csv
 """
 
 # Import necessary libraries
@@ -32,7 +29,7 @@ nlp_bc5cdr = spacy.load("en_ner_bc5cdr_md")  # Model for biomedical NER
 # Initialize NLTK Lemmatizer
 lemmatizer = WordNetLemmatizer()
 
-parser = argparse.ArgumentParser(description="Creates a Knowledge Graph as a CSV from HPRA drug leaflet text file.")
+parser = argparse.ArgumentParser(description="Creates a Knowledge Graph as a CSV from the text file.")
 parser.add_argument("--input", required=True, help="Path to input .txt file")
 parser.add_argument("--terms", required=True, help="Path to medical terms .txt file")
 parser.add_argument("--output", required=True, help="Path to output .csv file")

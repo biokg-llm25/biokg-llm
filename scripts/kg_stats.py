@@ -12,10 +12,7 @@ This script computes key statistics for the KG, MEDAKA including:
 import argparse
 import pandas as pd
 import networkx as nx
-from collections import defaultdict
-import matplotlib.pyplot as plt
 
-plt.rcParams['font.family'] = 'Arial'
 
 #------------------ Helper Functions -------------------#
 def build_graph(df):

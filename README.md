@@ -52,7 +52,7 @@ We present an end-to-end pipeline for constructing a biomedical knowledge graph 
 
 ## Dataset Description
 
-As a demonstration of our general pipeline for the construction of biomedical KGs, we implemented and evaluated a case study focused on drug leaflets. The resulting KG contains a total of 488,154 subject–predicate–object triples, covering 23,313 unique entities and 10 different relation types. It comprises 4,786 unique Drug entities, connected to a wide range of medically relevant object types. Specifically, the graph includes 8,043 SideEffect nodes, 7,213 Warning nodes, 4,016 Contraindication nodes, 1,950 ActiveIngredient nodes, and 1,781 InactiveIngredient nodes. Additional descriptive attributes are captured through 926 Colour, 1,143 Shape, 660 StorageInfo, and 177 DosageInfo nodes. The graph forms a single connected component, with all 23,313 nodes interconnected via 431,909 directed, labeled edges. The average node degree is 41.87, indicating a densely connected structure. The following figures 2 and 3 show the distribution of various entity types and relation types in the dataset.
+As a demonstration of our general pipeline for the construction of biomedical KGs, we implemented and evaluated a case study focused on drug leaflets. The resulting KG, MEDAKA contains a total of 457,267 subject–predicate–object triples, covering 22,471 unique entities and 10 different relation types. The average node degree is 40.70, indicating a densely connected structure. The following figures 2 and 3 show the distribution of various entity types and relation types in the dataset.
 
 <table width="100%">
   <tr>
@@ -144,11 +144,12 @@ python clean_kg.py --input data/medaka_processed_network.csv --output data/medak
 ```
 Performs a final cleaning to remove null and noisy values, and duplicates. Generates the final dataset as a CSV file.
 
-### 4. Visualization and KG Statistics
+### 4. Graph Statistics
 ```bash
-jupyter notebook graph_stats.ipynb
+python scripts/kg_stats.py --input data/medaka.csv
 ```
-Explore key graph statistics of the dataset(as a kG) like:
-- Entity & relation type distributions
+Explores key graph statistics of MEDAKA including:
 - Node & edge counts
-- Degree distributions and graph connectivity
+- Predicate-wise statistics
+- Degree distributions, graph connectivity, betweenness centrality and assortativity
+- Top drugs based on the count of relations

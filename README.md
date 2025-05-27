@@ -28,17 +28,6 @@ We introduce a two-fold contribution:
 </p>
 <em>Figure 1: Proposed Pipeline</em>
 
-
-## Overview
-
-Knowledge graphs (KGs) are increasingly used to represent biomedical information in structured, interpretable formats. However, existing biomedical KGs often focus narrowly on molecular interactions or adverse events, overlooking the rich, drug-centric data found in package leaflets.
-
-In this work, we present: (1) An end-to-end pipeline for automatically constructing biomedical KGs from unstructured text using an LLM, and (2) A dataset in the form of a knowledge graph, created by applying the proposed method to publicly available drug package inserts sourced from online pharmacy websites.
-
-The proposed method is modular, reproducible, and easy to adapt. Both the LLM and the input data can be substituted to generate different KGs. The resulting KG captures clinically relevant attributes such as side effects, warnings, contraindications, ingredients, dosage guidelines, storage instructions, and physical characteristics, which are often missing in existing medical databases and KGs.
-
-We evaluate the KG through manual inspection and compare its coverage with existing biomedical KGs and databases, highlighting complementary aspects such as storage instructions, dosage guidelines, and ingredient details that are often absent in these resources. We expect this dataset to support future applications in areas such as patient safety and drug recommendation, while the generation method can be easily adopted for other types of unstructured documents.
-
 ## Features
 
 - *End-to-End Biomedical KG Pipeline:*  A modular and hackable pipeline that extracts structured knowledge from unstructured text using web scraping, LLMs, NER, and relation mapping. Both the LLM and scraper components can be easily replaced or customized.
@@ -55,7 +44,18 @@ We evaluate the KG through manual inspection and compare its coverage with exist
 
 ## Proposed Pipeline
 
-We present an end-to-end pipeline for constructing a biomedical knowledge graph from unstructured drug leaflet data. The process begins with data collection, where drug leaflets are scraped from online pharmacies using a web scraper built using Python and converted into machine-readable text. This raw data is then processed using a prompt-based approach with an LLM for information extraction, focusing on key drug-related entities and their interrelationships. The extracted entities undergo further refinement through NER and relation mapping, ultimately being transformed into nodes and labeled edges. These are subsequently post-processed and organized into a CSV format, which serves as the foundation of the knowledge graph. [Figure 1](#figure-1-proposed-pipeline) above provides a visual overview of the entire pipeline, illustrating each processing stage from data collection to knowledge graph construction.
+We present an end-to-end pipeline for constructing a biomedical knowledge graph from unstructured drug leaflet data.
+
+- The process begins with **data collection**, where drug leaflets are scraped from online pharmacies using a Python-based web scraper and converted into machine-readable text.
+
+- Next, this raw text is processed using a **prompt-based approach with a Large Language Model (LLM)** for information extraction, focusing on drug-related entities and their relationships.
+
+- Extracted entities are further refined using **Named Entity Recognition (NER)** and **relation mapping**, then transformed into graph nodes and labeled edges.
+
+Finally, the data is post-processed and organized into a **CSV format**, forming the foundation of the knowledge graph.
+
+> 📌 *[Figure 1](#figure-1-proposed-pipeline) above shows a visual overview of the pipeline, highlighting each step from raw data collection to graph construction.*
+
 
 ## Dataset Description
 

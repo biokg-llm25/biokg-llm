@@ -87,9 +87,17 @@ cd medaka
 ```
 
 ### 2. Create and activate virtual environment
+Choose one of the following:
+
+- **Option A: Using `venv`**
 ```bash
 python3 -m venv env
 source env/bin/activate  # On Windows: env\Scripts\activate
+```
+- **Option B: Using `conda`**
+```bash
+conda create --name medaka-env python=3.10
+conda activate medaka-env
 ```
 
 ### 3. Install dependencies

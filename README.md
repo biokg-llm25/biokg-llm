@@ -42,24 +42,24 @@ We introduce a two-fold contribution:
 
 - *Generalizable & Open Source:*  The pipeline is reusable and adaptable across domains and document types, and the full codebase is open source.
 
-## Proposed Pipeline
+## Pipeline
 
 We present an end-to-end pipeline for constructing a biomedical knowledge graph from unstructured drug leaflet data.
 
 - The process begins with **data collection**, where drug leaflets are scraped from online pharmacies using a Python-based web scraper and converted into machine-readable text.
 
-- Next, this raw text is processed using a **prompt-based approach with a Large Language Model (LLM)** for information extraction, focusing on drug-related entities and their relationships.
+- Next, this raw text is processed using a **prompt-based approach with a Large Language Model** for information extraction, focusing on drug-related entities and their relationships.
 
-- Extracted entities are further refined using **Named Entity Recognition (NER)** and **relation mapping**, then transformed into graph nodes and labeled edges.
+- Extracted entities are further refined using **Named Entity Recognition** and **relation mapping**, then transformed into graph nodes and labeled edges.
 
 Finally, the data is post-processed and organized into a **CSV format**, forming the foundation of the knowledge graph.
 
 > 📌 *[Figure 1](#figure-1-proposed-pipeline) above shows a visual overview of the pipeline, highlighting each step from raw data collection to graph construction.*
 
 
-## Dataset Description
+## Description
 
-As a demonstration of our general pipeline for the construction of biomedical KGs, we implemented and evaluated a case study focused on drug leaflets. The resulting KG, MEDAKA contains a total of 457,267 subject–predicate–object triples, covering 22,471 unique entities and 10 different relation types. The average node degree is 40.70, indicating a densely connected structure. The following figures 2 and 3 show the distribution of various entity types and relation types in the dataset.
+As a demonstration of our general pipeline for the construction of biomedical KGs, we implemented and evaluated a case study focused on drug leaflets. The resulting KG, MEDAKA contains a total of 457,267 subject–predicate–object triples, covering 22,471 unique entities and 10 different relation types. The average node degree is 40.70. The following figures 2 and 3 show the distribution of various entity types and relation types in the dataset.
 
 <table width="100%">
   <tr>
@@ -137,7 +137,7 @@ Uses a locally hosted LLM (e.g., LLaMA 3 70B Instruct) to extract drug-related i
 ```bash
 python scripts/extract_medical_terms.py --input ./medaka.txt --output ./final_medical_terms.txt
 ```
-Generates a list of medical terms from the Q&A-format .txt file using named entity recognition (NER). These terms are used for fuzzy matching and normalization in the subsequent KG construction step.
+Generates a list of medical terms from the Q&A-format .txt file using named entity recognition. These terms are used for fuzzy matching and normalization in the subsequent KG construction step.
 - **Step 5: Build Initial KG in CSV Format**
 ```bash
 python scripts/build_kg_csv.py --input medaka.txt --terms final_medical_terms.txt --output medaka_complete_network.csv

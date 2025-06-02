@@ -26,11 +26,11 @@ We introduce a two-fold contribution:
 <p align="center">
   <img src="figures/MEDAKA_Proposed_Pipeline.png" alt="Pipeline Overview" width="100%">
 </p>
-<em>Figure 1: Proposed Pipeline</em>
+<em>Figure 1: Pipeline</em>
 
 ## Features
 
-- *End-to-End Biomedical KG Pipeline:*  A modular and hackable pipeline that extracts structured knowledge from unstructured text using web scraping, LLMs, NER, and relation mapping. Both the LLM and scraper components can be easily replaced or customized.
+- *End-to-End KG Pipeline:*  A modular and hackable pipeline that extracts structured knowledge from unstructured text using web scraping, LLMs, NER, and relation mapping. Both the LLM and scraper components can be easily replaced or customized.
 
 - *Drug Leaflet-Centric Knowledge Graph:*  Constructed from 13,000+ drug leaflets sourced from the HPRA, capturing real-world, patient-facing clinical data often overlooked in existing biomedical resources.
 

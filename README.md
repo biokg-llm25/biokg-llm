@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">MEDAKA: Construction of Biomedical Knowledge Graphs Using Large Language Models</h1>
 
-<div align="left">
+<div align="center">
   <a href="https://huggingface.co/datasets/medaka25/MEDAKA-v0.1/resolve/main/medaka_v0.1.csv?download=true" download>
     <img src="https://img.shields.io/badge/DOWNLOAD%20MEDAKA%20v0.1-CSV-blue?style=for-the-badge&logo=csv&logoColor=white" alt="Download MEDAKA v0.1 CSV" style="height: 42px;">
   </a>

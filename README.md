@@ -37,6 +37,7 @@ We introduce a two-fold contribution:
 
 **[Download the latest version of MEDAKA(v0.1) from Hugging Face Hub](https://huggingface.co/datasets/medaka25/MEDAKA-v0.1)** to explore clinically relevant information beyond molecular data.
 
+### <a name="figure-1-pipeline"></a>
 <p align="center">
   <img src="figures/MEDAKA_Proposed_Pipeline.png" alt="Pipeline Overview" width="100%">
 </p>
@@ -72,7 +73,7 @@ We present an end-to-end pipeline for constructing a biomedical knowledge graph 
 
 Finally, the data is post-processed and organized into a **CSV format**, forming the foundation of the knowledge graph.
 
-> 📌 *[Figure 1](#figure-1-proposed-pipeline) above shows a visual overview of the pipeline, highlighting each step from raw data collection to graph construction.*
+> 📌 *[Figure 1](#figure-1-pipeline) above shows a visual overview of the pipeline, highlighting each step from raw data collection to graph construction.*
 
 ---
 

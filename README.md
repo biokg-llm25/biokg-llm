@@ -18,7 +18,7 @@
 
 ---
 
-## Releases 
+## Releases [[Back to Top]︎](#table-of-contents)
 > 📢 **v0.1 is out now!**  
 > Stay tuned for upcoming releases — new versions of the MEDAKA dataset and pipeline improvements will be announced here.
 

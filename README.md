@@ -86,8 +86,10 @@ Finally, the structured data is post-processed and organized into a **CSV format
 <a name="description"></a>
 ## 📊 Description [[Back to Top]︎](#table-of-contents)
 
-As a demonstration of our general pipeline for the construction of KGs, we implemented and evaluated a case study focused on drug leaflets. The resulting KG, MEDAKA contains a total of 457,267 subject–predicate–object triples, covering 22,471 unique entities and 10 different relation types. The average node degree is 40.70. The following figures 2 and 3 show the distribution of various entity types and relation types in the dataset.
+As a demonstration of our general pipeline for the construction of KGs, we implemented and evaluated a case study focused on drug leaflets. The resulting KG, MEDAKA contains a total of 457,267 subject–predicate–object triples, covering 22,471 unique entities and 10 different relation types. The average node degree is 40.70. The following *[Figure 2](#figure-2)* and *[Figure 3](#figure-3)* show the distribution of various entity types and relation types in the dataset.
 
+<a name="figure-2"></a>
+<a name="figure-3"></a>
 <table width="100%">
   <tr>
     <td align="center" width="50%">

@@ -18,7 +18,7 @@
 
 ---
 
-## Releases [[Back to Top]︎](#table-of-contents)
+## 📌 Releases [[Back to Top]︎](#table-of-contents)
 > 📢 **v0.1 is out now!**  
 > Stay tuned for upcoming releases — new versions of the MEDAKA dataset and pipeline improvements will be announced here.
 
@@ -30,7 +30,7 @@
 
 ---
 
-## TL;DR 
+## ⚡ TL;DR [[Back to Top]︎](#table-of-contents)
 
 We introduce a two-fold contribution:
 
@@ -47,7 +47,7 @@ We introduce a two-fold contribution:
 
 ---
 
-## Features 
+## ✨ Features [[Back to Top]︎](#table-of-contents)
 
 - **End-to-End KG Pipeline:**  A modular and hackable pipeline that extracts structured knowledge from unstructured text using web scraping, LLMs, NER, and relation mapping. Both the LLM and scraper components can be easily replaced or customized.
 
@@ -63,7 +63,7 @@ We introduce a two-fold contribution:
 
 ---
 
-## Pipeline
+## 🧬 Pipeline [[Back to Top]︎](#table-of-contents)
 
 We present an end-to-end pipeline for constructing a biomedical knowledge graph from unstructured drug leaflet data.
 
@@ -79,7 +79,7 @@ Finally, the data is post-processed and organized into a **CSV format**, forming
 
 ---
 
-## Description 
+## 📊 Description [[Back to Top]︎](#table-of-contents)
 
 As a demonstration of our general pipeline for the construction of KGs, we implemented and evaluated a case study focused on drug leaflets. The resulting KG, MEDAKA contains a total of 457,267 subject–predicate–object triples, covering 22,471 unique entities and 10 different relation types. The average node degree is 40.70. The following figures 2 and 3 show the distribution of various entity types and relation types in the dataset.
 
@@ -98,7 +98,7 @@ As a demonstration of our general pipeline for the construction of KGs, we imple
 
 ---
 
-## Installation
+## Installation [[Back to Top]︎](#table-of-contents)
 
 Follow these steps to set up the project locally:
 
@@ -129,7 +129,7 @@ pip install -r requirements.txt
 
 ---
 
-## Usage 
+## Usage [[Back to Top]︎](#table-of-contents)
 The pipeline is divided into multiple stages for modular processing:
 
 ### 1. Data Scraping

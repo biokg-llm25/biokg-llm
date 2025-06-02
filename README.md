@@ -14,7 +14,7 @@
 
 ## Table of Contents
 
-| [Releases](#releases) | [TL;DR](#tldr) | [Features](#features) | [Pipeline](#pipeline) | [Description](#description) | [Installation](#installation) | [Usage](#usage) 
+| [Releases](#releases) | [TL;DR](#tldr) | [Features](#features) | [Pipeline](#pipeline) | [Description](#description) | [Installation](#installation) | [Usage](#usage) |
 
 ---
 
@@ -47,17 +47,17 @@ We introduce a two-fold contribution:
 
 ## Features 
 
-- *End-to-End KG Pipeline:*  A modular and hackable pipeline that extracts structured knowledge from unstructured text using web scraping, LLMs, NER, and relation mapping. Both the LLM and scraper components can be easily replaced or customized.
+- **End-to-End KG Pipeline:**  A modular and hackable pipeline that extracts structured knowledge from unstructured text using web scraping, LLMs, NER, and relation mapping. Both the LLM and scraper components can be easily replaced or customized.
 
-- *Drug Leaflet-Centric Knowledge Graph:*  Constructed from 13,000+ drug leaflets sourced from the HPRA, capturing real-world, patient-facing clinical data often overlooked in existing biomedical resources.
+- **Drug Leaflet-Centric Knowledge Graph:**  Constructed from 13,000+ drug leaflets sourced from the HPRA, capturing real-world, patient-facing clinical data often overlooked in existing biomedical resources.
 
-- *LLM-Based Information Extraction:*  Utilizes LLaMA 3 70B Instruct for prompt-based extraction of subject–predicate–object triples directly from full-text PDFs, avoiding the need for chunking and preserving context.
+- **LLM-Based Information Extraction:**  Utilizes LLaMA 3 70B Instruct for prompt-based extraction of subject–predicate–object triples directly from full-text PDFs, avoiding the need for chunking and preserving context.
 
-- *Ready-to-Use Dataset:*  The resulting knowledge graph can be downloaded from [Hugging Face Hub](https://huggingface.co/datasets/medaka25/MEDAKA-v0.1) in a ready-to-use CSV format.
+- **Ready-to-Use Dataset:** The resulting knowledge graph can be downloaded from [Hugging Face Hub](https://huggingface.co/datasets/medaka25/MEDAKA-v0.1) in a ready-to-use CSV format.
 
-- *Broader Clinical Coverage:*  Captures practical features often missing in other biomedical KGs and databases, including storage information, physical appearance (shape, color), and inactive ingredients.
+- **Broader Clinical Coverage:**  Captures practical features often missing in other biomedical KGs and databases, including storage information, physical appearance (shape, color), and inactive ingredients.
 
-- *Generalizable & Open Source:*  The pipeline is reusable and adaptable across domains and document types, and the full codebase is open source.
+- **Generalizable & Open Source:**  The pipeline is reusable and adaptable across domains and document types, and the full codebase is open source.
 
 ---
 

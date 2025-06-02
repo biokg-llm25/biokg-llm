@@ -1,11 +1,24 @@
-# 🐟 MEDAKA: Construction of Biomedical Knowledge Graphs Using Large Language Models
+<p align="center">
+  <img src="figures/MEDAKA_logo.png" width="150" alt="Medaka Logo" />
+</p>
+<h1 align="center">MEDAKA: Construction of Biomedical Knowledge Graphs Using Large Language Models</h1>
+
 <div align="left">
   <a href="https://huggingface.co/datasets/medaka25/MEDAKA-v0.1/resolve/main/medaka_v0.1.csv?download=true" download>
     <img src="https://img.shields.io/badge/DOWNLOAD%20MEDAKA%20v0.1-CSV-blue?style=for-the-badge&logo=csv&logoColor=white" alt="Download MEDAKA v0.1 CSV" style="height: 42px;">
   </a>
 </div>
 
-## Releases
+
+---
+
+## Table of Contents
+
+| [Releases](#releases) | [TL;DR](#tldr) | [Features](#features) | [Pipeline](#pipeline) | [Description](#description) | [Installation](#installation) | [Usage](#usage) 
+
+---
+
+## Releases 
 
 ### v0.0 - Initial Upload  
 🔗 [View Dataset on Hugging Face](https://huggingface.co/datasets/medaka25/MEDAKA)
@@ -13,8 +26,9 @@
 ### v0.1 - Latest Version
 🔗 [View Dataset on Hugging Face](https://huggingface.co/datasets/medaka25/MEDAKA-v0.1)
 
+---
 
-## TL;DR
+## TL;DR 
 
 We introduce a two-fold contribution:
 
@@ -28,7 +42,9 @@ We introduce a two-fold contribution:
 </p>
 <em>Figure 1: Pipeline</em>
 
-## Features
+---
+
+## Features 
 
 - *End-to-End KG Pipeline:*  A modular and hackable pipeline that extracts structured knowledge from unstructured text using web scraping, LLMs, NER, and relation mapping. Both the LLM and scraper components can be easily replaced or customized.
 
@@ -41,6 +57,8 @@ We introduce a two-fold contribution:
 - *Broader Clinical Coverage:*  Captures practical features often missing in other biomedical KGs and databases, including storage information, physical appearance (shape, color), and inactive ingredients.
 
 - *Generalizable & Open Source:*  The pipeline is reusable and adaptable across domains and document types, and the full codebase is open source.
+
+---
 
 ## Pipeline
 
@@ -56,8 +74,9 @@ Finally, the data is post-processed and organized into a **CSV format**, forming
 
 > 📌 *[Figure 1](#figure-1-proposed-pipeline) above shows a visual overview of the pipeline, highlighting each step from raw data collection to graph construction.*
 
+---
 
-## Description
+## Description 
 
 As a demonstration of our general pipeline for the construction of biomedical KGs, we implemented and evaluated a case study focused on drug leaflets. The resulting KG, MEDAKA contains a total of 457,267 subject–predicate–object triples, covering 22,471 unique entities and 10 different relation types. The average node degree is 40.70. The following figures 2 and 3 show the distribution of various entity types and relation types in the dataset.
 
@@ -74,7 +93,7 @@ As a demonstration of our general pipeline for the construction of biomedical KG
   </tr>
 </table>
 
-
+---
 
 ## Installation
 
@@ -105,7 +124,9 @@ conda activate medaka-env
 pip install -r requirements.txt
 ```
 
-## Usage
+---
+
+## Usage 
 The pipeline is divided into multiple stages for modular processing:
 
 ### 1. Data Scraping

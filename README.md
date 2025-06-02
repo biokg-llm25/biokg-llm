@@ -19,12 +19,14 @@
 ---
 
 ## Releases 
-
-### v0.0 - Initial Upload  
-🔗 [View Dataset on Hugging Face](https://huggingface.co/datasets/medaka25/MEDAKA)
+> 📢 **v0.1 is out now!**  
+> Stay tuned for upcoming releases — new versions of the MEDAKA dataset and pipeline improvements will be announced here.
 
 ### v0.1 - Latest Version
 🔗 [View Dataset on Hugging Face](https://huggingface.co/datasets/medaka25/MEDAKA-v0.1)
+
+### v0.0 - Initial Upload  
+🔗 [View Dataset on Hugging Face](https://huggingface.co/datasets/medaka25/MEDAKA)
 
 ---
 

@@ -209,7 +209,7 @@ Explores key graph statistics of MEDAKA including:
 
 > 📖 **Note:** The statistics presented in the original paper refer to **MEDAKA v0.0**. A new, cleaned version (**v0.1**) has since been released with improved post-processing.  The overall structure, entity types, and relation schema have not changed.
 
-| Metric              | v0.0 (Paper) | v0.1 (Latest) |
+| Metric              | v0.0         | v0.1           |
 |---------------------|--------------|----------------|
 | **Triples**         | 457,267      | 412,457        |
 | **Unique Nodes**    | 22,471       | 22,635         |

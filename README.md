@@ -56,7 +56,7 @@ We introduce a two-fold contribution:
 
 - **Drug Leaflet-Centric Knowledge Graph:**  Constructed from 13,000+ drug leaflets sourced from the HPRA, capturing real-world, patient-facing clinical data often overlooked in existing biomedical resources.
 
-- **LLM-Based Information Extraction:**  Utilizes LLaMA 3 70B Instruct for prompt-based extraction of subject–predicate–object triples directly from full-text PDFs, avoiding the need for chunking and preserving context.
+- **LLM-Based Information Extraction:**  Utilizes **`LLaMA 3 70B Instruct`** for prompt-based extraction of subject–predicate–object triples directly from full-text PDFs, avoiding the need for chunking and preserving context.
 
 - **Ready-to-Use Dataset:** The resulting knowledge graph can be downloaded from [Hugging Face Hub](https://huggingface.co/datasets/medaka25/MEDAKA-v0.1) in a ready-to-use CSV format.
 
@@ -73,11 +73,11 @@ We present an end-to-end pipeline for constructing a biomedical knowledge graph 
 
 - The process begins with **data collection**, where drug leaflets are scraped from online pharmacies using a Python-based web scraper and converted into machine-readable text.
 
-- Next, this raw text is processed using a **prompt-based approach with a Large Language Model** for information extraction, focusing on drug-related entities and their relationships.
+- The raw text is then processed using a **prompt-based approach with an LLM** to extract drug-related entities and their relationships.
 
 - Extracted entities are further refined using **Named Entity Recognition** and **relation mapping**, then transformed into graph nodes and labeled edges.
 
-Finally, the data is post-processed and organized into a **CSV format**, forming the foundation of the knowledge graph.
+Finally, the structured data is post-processed and organized into a **CSV format**, forming the foundation of the MEDAKA knowledge graph.
 
 > 📌 *[Figure 1](#figure-1-pipeline) above shows a visual overview of the pipeline, highlighting each step from raw data collection to graph construction.*
 

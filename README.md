@@ -207,7 +207,7 @@ Explores key graph statistics of MEDAKA including:
 <a name="errata"></a>
 ## Errata [[Back to Top]︎](#table-of-contents)
 
-> 📖 **Note:** The statistics presented in the original paper refer to **MEDAKA v0.0**. A new, cleaned version (**v0.1**) has since been released with improved post-processing.  The overall structure, entity types, and relation schema have not changed.
+> 📖 **Note:** The statistics submitted in the original paper refer to **MEDAKA v0.0**. A new, cleaned version (**v0.1**) has since been released with improved post-processing.  The overall structure, entity types, and relation schema have not changed.
 
 | Metric              | v0.0         | v0.1           |
 |---------------------|--------------|----------------|
